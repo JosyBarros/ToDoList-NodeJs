@@ -8,8 +8,17 @@
     <link rel="stylesheet" href="stayle.css">
 </head>
 <body>
-    <h1>HELLO WORLD</h1>
+   <form action="/create" method="post">
+    <input type="text" name="task" id="task" placeholder="Insira uma tarefa">
+    <button id="addButton" type="submit">Adicionar</button>
+   </form>
 
+   <ul>
+   <% tasksList.forEach((task) => { %>
+        <li> <%= task.task %> | <%= task.date.toLocaleDateString('pt-BR') %> </li>
+   <% }) %>
+   </ul>
+  
 
 
 
